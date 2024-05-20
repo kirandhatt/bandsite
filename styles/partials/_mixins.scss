@@ -1,0 +1,122 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+//responsive design mixins//
+
+@mixin mobile {
+    @media screen and (min-width: $min-breakpoint-mobile) and (max-width: $max-breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $min-breakpoint-tablet) and (max-width: $max-breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $min-breakpoint-desktop) and (max-width: $max-breakpoint-desktop) {
+        @content;
+    }
+}
+
+//set mobile text styles//
+
+@mixin pageHeader-mobile {
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+}
+
+@mixin sectionHeader-mobile {
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+}
+
+@mixin subHeader-mobile {
+    font-family: 'Avenir Next';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+}
+
+@mixin bodyCopy-mobile {
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+@mixin footerCopy-mobile {
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+@mixin labelsButtons-mobile {
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+//set desktop & tablet text styles//
+
+@mixin pageHeader-notmobile {
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 68px;
+    padding-top: 48px;
+    padding-bottom: 36px;
+}
+
+@mixin sectionHeader-notmobile {
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    padding-top: 48px;
+    padding-bottom: 36px;
+}
+
+@mixin subHeader-notmobile {
+    font-family: 'Avenir Next';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 48px;
+    padding-bottom: 36px;
+}
+
+@mixin bodyCopy-notmobile {
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin footerCopy-notmobile {
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@mixin labelsButtons-notmobile {
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+}

@@ -1,0 +1,88 @@
+@use "./mixins" as *;
+
+// load fonts //
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("otf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Avenir Next', sans-serif;
+}
+
+h1 {
+    @include mobile {
+        @include pageHeader-mobile;
+    }
+    @include tablet {
+        @include pageHeader-notmobile;
+    }
+    @include desktop {
+        @include pageHeader-notmobile;
+    }
+}
+
+h2 {
+    @include mobile {
+        @include sectionHeader-mobile;
+    }
+    @include tablet {
+        @include sectionHeader-notmobile;
+    }
+    @include desktop {
+        @include sectionHeader-notmobile;
+    }
+}
+
+h3 {
+    @include mobile {
+        @include subHeader-mobile;
+    }
+    @include tablet {
+        @include subHeader-notmobile;
+    }
+    @include desktop {
+        @include subHeader-notmobile;
+    }
+}
+
+p {
+    @include mobile {
+        @include bodyCopy-mobile;
+    }
+    @include tablet {
+        @include bodyCopy-notmobile;
+    }
+    @include desktop {
+        @include bodyCopy-notmobile;
+    }
+}
+
+a {
+    @include mobile {
+        @include labelsButtons-mobile;
+    }
+    @include tablet {
+        @include labelsButtons-notmobile;
+    }
+    @include desktop {
+        @include labelsButtons-notmobile;
+    }
+}
