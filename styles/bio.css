@@ -629,4 +629,116 @@ a, a:visited {
     line-height: 20px;
     padding: 2.5rem 0rem 0rem;
   }
+}
+
+.hero {
+  display: flex;
+  background: url(../assets/images/hero-bio.jpg) rgba(50, 50, 50, 0.5);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .hero {
+    height: 24vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .hero {
+    height: 47vh;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .hero {
+    height: 65vh;
+  }
+}
+.hero__title {
+  align-self: center;
+  margin: 1rem;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .hero__title {
+    margin: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .hero__title {
+    margin: 5rem;
+  }
+}
+.hero__text {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .hero__text {
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .hero__text {
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .about {
+    padding: 1.5rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about {
+    padding: 3rem 2.25rem 0rem 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .about {
+    padding: 3rem 2.25rem 0rem 2.25rem;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .about__title {
+    padding: 0rem 0rem 1rem 0rem;
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about__title {
+    padding: 0rem 0rem 2.25rem 0rem;
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .about__title {
+    padding: 0rem 0rem 2.25rem 0rem;
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+  }
 }/*# sourceMappingURL=bio.css.map */

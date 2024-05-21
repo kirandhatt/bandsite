@@ -3,3 +3,81 @@
 @use "./partials/mixins" as *;
 @use "./partials/global" as *;
 
+// hero section //
+
+.hero {
+    display: flex;
+    background: url(../assets/images/hero-bio.jpg) $overlay; 
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    width: 100%;
+    @include mobile {
+        height: 24vh;
+    }
+    @include tablet {
+        height: 47vh;
+    }
+    @include desktop {
+        height: 65vh;
+    }
+
+    &__title {
+        align-self: center;
+        margin: 1rem;
+        color: $white;
+        @include tablet {
+            margin: 2.25rem;
+        }
+        @include desktop {
+            margin: 5rem;
+        }
+    }
+
+    &__text {
+        @include pageHeader-mobile;
+        font-weight: 600;
+        @include tablet {
+            @include pageHeader-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            @include pageHeader-notmobile;
+            font-weight: 600;
+        }
+    }
+}
+
+// about section //
+
+.about {
+    @include mobile {
+        padding: 1.5rem 1rem 0rem 1rem;
+    }
+    @include tablet {
+        padding: 3rem 2.25rem 0rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 2.25rem 0rem 2.25rem;
+    }
+
+    &__title {
+    @include mobile {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+    }
+    @include tablet {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }
+    @include desktop {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }    
+    }
+}
