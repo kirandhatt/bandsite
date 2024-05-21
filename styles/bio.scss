@@ -214,8 +214,52 @@
 
 .gallery {
     background-color: $alabaster;
+    @include mobile {
+        padding: 1.5rem 1rem 0rem 1rem;
+    }
+    @include tablet {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+        max-width: $max-width;
+    }
 
     &__title {
-        padding: 1.5rem 0rem 0rem;
+    @include mobile {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+    }
+    @include tablet {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }
+    @include desktop {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+        margin: 0rem 5rem;
+    }    
+    }
+
+    &__collection {
+        width: 100%;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include desktop {
+            padding: 0rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        padding-bottom: 1rem;
     }
 }

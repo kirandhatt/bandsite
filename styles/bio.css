@@ -932,6 +932,70 @@ a, a:visited {
 .gallery {
   background-color: #FAFAFA;
 }
-.gallery__title {
-  padding: 1.5rem 0rem 0rem;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .gallery {
+    padding: 1.5rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .gallery {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .gallery {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+    max-width: 1920px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .gallery__title {
+    padding: 0rem 0rem 1rem 0rem;
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .gallery__title {
+    padding: 0rem 0rem 2.25rem 0rem;
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .gallery__title {
+    padding: 0rem 0rem 2.25rem 0rem;
+    font-family: "Avenir Next";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+    margin: 0rem 5rem;
+  }
+}
+.gallery__collection {
+  width: 100%;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .gallery__collection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .gallery__collection {
+    padding: 0rem;
+  }
+}
+.gallery__image {
+  width: 100%;
+  padding-bottom: 1rem;
 }/*# sourceMappingURL=bio.css.map */
