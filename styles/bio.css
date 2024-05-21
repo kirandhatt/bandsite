@@ -697,6 +697,11 @@ a, a:visited {
   }
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .about {
     padding: 1.5rem 1rem 0rem 1rem;
@@ -710,6 +715,7 @@ a, a:visited {
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .about {
     padding: 3rem 2.25rem 0rem 2.25rem;
+    max-width: 1920px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -740,5 +746,98 @@ a, a:visited {
     font-size: 36px;
     line-height: 44px;
     font-weight: 600;
+  }
+}
+.about__image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  height: 12rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about__image {
+    padding: 0rem 3rem 0rem;
+    height: 22rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .about__image {
+    padding: 0rem 6rem 0rem;
+    height: 40rem;
+  }
+}
+.about__quote {
+  padding: 0.5rem 0rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about__quote {
+    margin: 1rem 0rem 0rem 0rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .about__quote {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .about__quotation {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about__quotation {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    padding: 0rem 3rem 0rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .about__quotation {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    padding: 0rem 6rem 0rem;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .about__quotee {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .about__quotee {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    padding: 0rem 3rem 0rem;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .about__quotee {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    padding: 0rem 6rem 0rem;
+    font-size: 14px;
   }
 }/*# sourceMappingURL=bio.css.map */
