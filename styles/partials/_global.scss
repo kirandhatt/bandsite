@@ -110,13 +110,11 @@ a, li {
         align-items: center;
         justify-content: center;
     }
-
     @include tablet {
         align-items: center;
         justify-content: flex-end;
         height: 4rem;
     }
-
     @include desktop {
         align-items: center;
         justify-content: flex-end;
@@ -126,12 +124,10 @@ a, li {
 
     &__heading {
         padding: 0.5rem 1rem;
-
         @include tablet {
             display: flex;
             align-items: flex-start;
         }
-
         @include desktop {
             display: flex;
             align-items: flex-start;
@@ -172,23 +168,19 @@ a, li {
         text-align: center;
         padding: 0rem 0rem 0.5rem 0rem;
         transition: all ease-in-out 0.2s;
-        
         @include mobile {
             width: 100%;
         }
-
         @include tablet {
             padding: 0rem 0rem 1rem 0rem;
             margin: 0rem 1rem;
             width: 5rem;
         }
-
         @include desktop {
             padding: 0rem 0rem 1rem 0rem;
             margin: 0rem 1rem;
             width: 5rem;
         }
-
         &--active, &:hover, &:focus {
             border-bottom: 0.25rem $white solid;
             color: $white;
@@ -211,6 +203,8 @@ a, li {
         }
     }
 }
+
+//footer//
 
 
 
