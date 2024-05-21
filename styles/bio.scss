@@ -83,6 +83,7 @@
         padding: 0rem 0rem 2.25rem 0rem;
         @include sectionHeader-notmobile;
         font-weight: 600;
+        margin: 0rem 5rem;
     }    
     }
 
@@ -96,18 +97,19 @@
             height: 22rem;
         }
         @include desktop {
-            padding: 0rem 6rem 0rem;
+            padding: 0rem 11rem 0rem;
             height: 40rem;
         }        
     }
 
     &__quote {
-        padding: 0.5rem 0rem;
+        padding: 1rem 0rem 0rem;
         @include tablet {
-            margin: 1rem 0rem 0rem 0rem;
+            margin: 2.25rem 0rem 0rem 0rem;
         }
         @include desktop {
-            width: 75%;
+            margin: 2.25rem 0rem 0rem 0rem;
+            width: 80%;
         }
     }
 
@@ -124,7 +126,7 @@
         @include desktop {
             @include subHeader-notmobile;
             text-align: left;
-            padding: 0rem 6rem 0rem;
+            padding: 0rem 11rem 0rem;
         }
     }
 
@@ -132,21 +134,88 @@
         @include mobile {
             @include subHeader-mobile;
             text-align: left;
+            padding: 1rem 0rem;
         }
         @include tablet {
             @include subHeader-notmobile;
             text-align: left;
             padding: 0rem 3rem 0rem;
             font-size: 14px;
+            margin: 1rem 0rem 0rem 0rem;
         }
         @include desktop {
             @include subHeader-notmobile;
             text-align: left;
-            padding: 0rem 6rem 0rem;
+            padding: 0rem 11rem 0rem;
             font-size: 14px;
+            margin: 1rem 0rem 0rem 0rem;
         }
     }
 
-    
+    &__biography {
+        padding: 1rem 0rem;
+    }
 
+    &__subtitle {
+        @include mobile {
+            @include subHeader-mobile;
+            text-align: left;
+            font-size: 1rem;
+        }
+        @include tablet {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 2rem 3rem 0rem;
+            font-size: 2rem;
+        }
+        @include desktop {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 3rem 11rem 0rem;
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        padding: 0rem 2rem 0rem 0rem;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            padding: 2rem 3rem 0rem;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            padding: 3rem 11rem 0rem;
+        }
+    }
+
+    &__paragraph {
+        @include mobile {
+            @include bodyCopy-mobile;
+            text-align: left;
+            padding: 1rem 0rem 0rem;
+        }
+        @include tablet {
+            @include bodyCopy-notmobile;
+            text-align: left;
+            padding: 0rem 1.5rem 1rem 0rem;
+        }
+        @include desktop {
+            @include bodyCopy-notmobile;
+            text-align: left;
+            padding: 0rem 6rem 1rem 0rem;
+        }
+    }
+
+}
+
+// gallery section //
+
+.gallery {
+    background-color: $alabaster;
+
+    &__title {
+        padding: 1.5rem 0rem 0rem;
+    }
 }
