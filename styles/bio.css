@@ -190,18 +190,44 @@ a, a:visited {
 
 .navigation {
   width: 100%;
+  background-color: #323232;
+  display: flex;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .navigation {
-    background-color: #323232;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .navigation {
+    align-items: center;
+    justify-content: flex-end;
+    height: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .navigation {
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 auto;
+    height: 5rem;
+  }
+}
 .navigation__heading {
   padding: 0.5rem 1rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .navigation__heading {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .navigation__heading {
+    padding: 0rem 1rem;
+  }
 }
 .navigation__logo {
   width: 120px;
@@ -220,11 +246,43 @@ a, a:visited {
   padding: 0rem;
   margin: 0rem;
 }
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .navigation__pages {
+    justify-content: left;
+    padding: 0.4rem 0rem 0rem 4rem;
+    margin: 0rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .navigation__pages {
+    justify-content: left;
+    padding: 1.4rem 0rem 0rem 4rem;
+    margin: 0rem;
+  }
+}
 .navigation__item {
-  width: 100%;
   text-align: center;
   padding: 0rem 0rem 0.5rem 0rem;
   transition: all ease-in-out 0.2s;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .navigation__item {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .navigation__item {
+    padding: 0rem 0rem 1rem 0rem;
+    margin: 0rem 1rem;
+    width: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .navigation__item {
+    padding: 0rem 0rem 1rem 0rem;
+    margin: 0rem 1rem;
+    width: 5rem;
+  }
 }
 .navigation__item--active, .navigation__item:hover, .navigation__item:focus {
   border-bottom: 0.25rem #FFFFFF solid;
