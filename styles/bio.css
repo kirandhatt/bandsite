@@ -992,7 +992,10 @@ a, a:visited {
 }
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .gallery__collection {
-    padding: 0rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0rem 5rem;
   }
 }
 .gallery__image {
@@ -1002,6 +1005,12 @@ a, a:visited {
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .gallery__image {
     width: 14rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 0rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .gallery__image {
+    width: 26rem;
+    padding: 0.5rem 1.5rem 1rem 0rem;
   }
 }/*# sourceMappingURL=bio.css.map */

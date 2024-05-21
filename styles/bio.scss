@@ -254,7 +254,10 @@
         }
 
         @include desktop {
-            padding: 0rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0rem 5rem;
         }
     }
 
@@ -263,7 +266,11 @@
         padding-bottom: 1rem;
         @include tablet {
             width: 14rem;
-            padding: 0.5rem;
+            padding: 0.5rem 1rem 0.5rem 0rem;
+        }
+        @include desktop {
+            width: 26rem;
+            padding: 0.5rem 1.5rem 1rem 0rem;
         }
     }
 }
