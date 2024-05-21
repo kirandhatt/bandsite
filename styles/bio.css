@@ -211,7 +211,7 @@ a, a:visited {
   .navigation {
     align-items: center;
     justify-content: flex-end;
-    margin: 0 63px;
+    margin: 0 3.9375rem;
     height: 4rem;
   }
 }
@@ -231,8 +231,8 @@ a, a:visited {
   }
 }
 .navigation__logo {
-  width: 120px;
-  height: 20px;
+  width: 7.5rem;
+  height: 1.25rem;
 }
 .navigation__menu {
   width: 100%;
@@ -577,8 +577,8 @@ a, a:visited {
   }
 }
 .footer__logo {
-  width: 120px;
-  height: 20px;
+  width: 7.5rem;
+  height: 1.25rem;
   padding: 0rem;
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
