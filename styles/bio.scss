@@ -1,0 +1,276 @@
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+@use "./partials/global" as *;
+
+// hero section //
+
+.hero {
+    display: flex;
+    background: url(../assets/images/hero-bio.jpg) $overlay; 
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    width: 100%;
+    @include mobile {
+        height: 24vh;
+    }
+    @include tablet {
+        height: 47vh;
+    }
+    @include desktop {
+        height: 65vh;
+    }
+
+    &__title {
+        align-self: center;
+        margin: 1rem;
+        color: $white;
+        @include tablet {
+            margin: 2.25rem;
+        }
+        @include desktop {
+            margin: 5rem;
+        }
+    }
+
+    &__text {
+        @include pageHeader-mobile;
+        font-weight: 600;
+        @include tablet {
+            @include pageHeader-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            @include pageHeader-notmobile;
+            font-weight: 600;
+        }
+    }
+}
+
+// about section //
+
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include mobile {
+        padding: 1.5rem 1rem 0rem 1rem;
+    }
+    @include tablet {
+        padding: 3rem 2.25rem 0rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 2.25rem 0rem 2.25rem;
+        max-width: $max-width;
+    }
+
+    &__title {
+    @include mobile {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+    }
+    @include tablet {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }
+    @include desktop {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+        margin: 0rem 5rem;
+    }    
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+        height: 12rem;
+        @include tablet {
+            padding: 0rem 3rem 0rem;
+            height: 22rem;
+        }
+        @include desktop {
+            padding: 0rem 11rem 0rem;
+            height: 40rem;
+        }        
+    }
+
+    &__quote {
+        padding: 1rem 0rem 0rem;
+        @include tablet {
+            margin: 2.25rem 0rem 0rem 0rem;
+        }
+        @include desktop {
+            margin: 2.25rem 0rem 0rem 0rem;
+            width: 80%;
+        }
+    }
+
+    &__quotation {
+        @include mobile {
+            @include subHeader-mobile;
+            text-align: left;
+        }
+        @include tablet {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 0rem 3rem 0rem;
+        }
+        @include desktop {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 0rem 11rem 0rem;
+        }
+    }
+
+    &__quotee {
+        @include mobile {
+            @include subHeader-mobile;
+            text-align: left;
+            padding: 1rem 0rem;
+        }
+        @include tablet {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 0rem 3rem 0rem;
+            font-size: 14px;
+            margin: 1rem 0rem 0rem 0rem;
+        }
+        @include desktop {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 0rem 11rem 0rem;
+            font-size: 14px;
+            margin: 1rem 0rem 0rem 0rem;
+        }
+    }
+
+    &__biography {
+        padding: 1rem 0rem;
+    }
+
+    &__subtitle {
+        @include mobile {
+            @include subHeader-mobile;
+            text-align: left;
+            font-size: 1rem;
+        }
+        @include tablet {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 2rem 3rem 0rem;
+            font-size: 2rem;
+        }
+        @include desktop {
+            @include subHeader-notmobile;
+            text-align: left;
+            padding: 3rem 11rem 0rem;
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        padding: 0rem 2rem 0rem 0rem;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            padding: 2rem 3rem 0rem;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            padding: 3rem 11rem 0rem;
+        }
+    }
+
+    &__paragraph {
+        @include mobile {
+            @include bodyCopy-mobile;
+            text-align: left;
+            padding: 1rem 0rem 0rem;
+        }
+        @include tablet {
+            @include bodyCopy-notmobile;
+            text-align: left;
+            padding: 0rem 1.5rem 1rem 0rem;
+        }
+        @include desktop {
+            @include bodyCopy-notmobile;
+            text-align: left;
+            padding: 0rem 6rem 1rem 0rem;
+        }
+    }
+
+}
+
+// gallery section //
+
+.gallery {
+    background-color: $alabaster;
+    @include mobile {
+        padding: 1.5rem 1rem 0rem 1rem;
+    }
+    @include tablet {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+        max-width: $max-width;
+    }
+
+    &__title {
+    @include mobile {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+    }
+    @include tablet {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }
+    @include desktop {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+        margin: 0rem 5rem;
+    }    
+    }
+
+    &__collection {
+        width: 100%;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @include desktop {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0rem 5rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        padding-bottom: 1rem;
+        @include tablet {
+            width: 14rem;
+            padding: 0.5rem 1rem 0.5rem 0rem;
+        }
+        @include desktop {
+            width: 26rem;
+            padding: 0.5rem 1.5rem 1rem 0rem;
+        }
+    }
+}

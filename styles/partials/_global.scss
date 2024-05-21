@@ -1,0 +1,448 @@
+@use "./variables" as *;
+@use "./typography" as *;
+@use "./mixins" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0rem;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: $white;
+}
+
+h1 {
+    @include mobile {
+        @include pageHeader-mobile;
+    }
+    @include tablet {
+        @include pageHeader-notmobile;
+    }
+    @include desktop {
+        @include pageHeader-notmobile;
+    }
+}
+
+h2 {
+    @include mobile {
+        @include sectionHeader-mobile;
+    }
+    @include tablet {
+        @include sectionHeader-notmobile;
+    }
+    @include desktop {
+        @include sectionHeader-notmobile;
+    }
+}
+
+h3 {
+    @include mobile {
+        @include subHeader-mobile;
+    }
+    @include tablet {
+        @include subHeader-notmobile;
+    }
+    @include desktop {
+        @include subHeader-notmobile;
+    }
+}
+
+p {
+    @include mobile {
+        @include bodyCopy-mobile;
+    }
+    @include tablet {
+        @include bodyCopy-notmobile;
+    }
+    @include desktop {
+        @include bodyCopy-notmobile;
+    }
+}
+
+a, li {
+    @include mobile {
+        @include labelsButtons-mobile;
+    }
+    @include tablet {
+        @include labelsButtons-notmobile;
+    }
+    @include desktop {
+        @include labelsButtons-notmobile;
+    }
+}
+
+//navigation//
+
+.nav-header {
+    width: 100%;
+    background-color: $bandSiteBlack;
+    @include mobile {
+        padding: 0.5rem 0rem;
+    }
+    @include tablet {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+    @include desktop {
+        padding: 0 auto;
+    }
+}
+
+.navigation {
+    width: 100%;
+    background-color: $bandSiteBlack;
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    @include tablet {
+        align-items: center;
+        justify-content: flex-end;
+        height: 4rem;
+    }
+    @include desktop {
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 3.9375rem;
+        height: 4rem;
+    }
+
+    &__heading {
+        padding: 0.5rem 1rem;
+        @include tablet {
+            display: flex;
+            align-items: flex-start;
+        }
+        @include desktop {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    &__logo {
+        width: 7.5rem;
+        height: 1.25rem;
+    }
+
+    &__menu {
+        width: 100%;
+    }
+
+    &__pages {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        position: relative;
+        top: 0.5rem;
+        padding: 0rem;
+        margin: 0rem;
+        @include tablet {
+            justify-content: left;
+            padding: 0.4rem 0rem 0rem 4rem;
+            margin: 0rem;
+        }
+        @include desktop {
+            justify-content: left;
+            padding: 0.4rem 0rem 0rem 4rem;
+            margin: 0rem;
+        }
+    }
+
+    &__item {
+        text-align: center;
+        padding: 0rem 0rem 0.5rem 0rem;
+        transition: all ease-in-out 0.2s;
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            padding: 0rem 0rem 1rem 0rem;
+            margin: 0rem 1rem;
+            width: 5rem;
+        }
+        @include desktop {
+            padding: 0rem 0rem 1rem 0rem;
+            margin: 0rem 1rem;
+            width: 5rem;
+        }
+        &--active, &:hover, &:focus {
+            border-bottom: 0.25rem $white solid;
+            color: $white;
+        }
+        &--inactive {
+            border-bottom: 0.25rem $bandSiteBlack solid;
+            color: $mercury;
+        }
+    }
+
+    &__link {
+        @include subHeader-mobile;
+        &--active, &:hover, &:focus {
+            font-weight: 600;
+            color: $white;
+        }
+        &--inactive {
+            font-weight: 400;
+            color: $mercury;
+        }
+    }
+}
+
+//footer//
+
+.footer {
+    width: 100%;
+    background-color: $bandSiteBlack;
+    color: $white;
+    padding: 1rem 1rem 0rem 1rem;
+    @include tablet {
+        padding: 2rem 2.25rem 1rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    @include desktop {
+        padding: 2rem 4rem 1rem;
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+    * {
+        padding: 0.5rem 0rem;
+    }
+
+    &__content {
+        padding: 0rem;
+        @include tablet {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+
+    &__social {
+        padding: 0rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        order: 1;
+        padding: 1rem 0rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+        @include tablet {
+            @include sectionHeader-notmobile;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            padding: 0rem;
+        }
+        @include desktop {
+            @include sectionHeader-notmobile;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            padding: 0rem;
+        }
+    }
+
+    &__menu {
+        order: 2;
+        padding: 0rem;
+        display: flex;
+        align-items: center;
+        @include tablet {
+            margin: 0rem 0rem 0rem 2.5rem;
+        }
+        @include desktop {
+            margin: 0rem 0rem 0rem 5rem;
+        }
+    }
+
+    &__link {
+        margin: 0rem 0.5rem 0rem 0rem;
+        @include tablet {
+            display: flex;
+            padding: 0rem;
+        }
+        @include desktop {
+            display: flex;
+            padding: 0rem;
+        }
+    }
+
+    &__icons {
+        padding: 1rem 0rem 0rem;
+        margin: 0rem 1.5rem 0rem 0rem;
+        @include tablet {
+            padding: 0rem;
+        }
+        @include desktop {
+            padding: 0rem;
+        }
+    }
+    
+    &__contact {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0rem;
+            margin: 0rem;
+        }
+        @include desktop {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0rem;
+            margin: 0rem;
+        }
+    }
+
+    &__info {
+        @include tablet {
+            margin: 0rem 1.5rem 0rem 0rem;
+        }
+        @include desktop {
+            margin: 0rem 4rem 0rem 0rem;
+        }
+    }
+
+    &__subtitle {
+        padding: 0.5rem 0rem 1rem;
+        margin: 0rem;
+        font-weight: 600;
+        @include tablet {
+            padding: 1rem 0rem 2.25rem;
+        }
+        @include desktop {
+            padding: 1rem 0rem 2.25rem;
+        }
+    }
+
+    &__text {
+        padding: 0rem;
+        @include footerCopy-mobile;
+        @include tablet {
+            @include footerCopy-notmobile;
+        }
+        @include desktop {
+            @include footerCopy-notmobile
+        }
+    }
+
+    &__email {
+        padding: 1rem 0rem 0rem;
+        @include footerCopy-mobile;
+        @include tablet {
+            @include footerCopy-notmobile;
+            padding: 2.25rem 0rem 0rem;
+        }
+        @include desktop {
+            @include footerCopy-notmobile;
+            padding: 2.25rem 0rem 0rem;
+        }
+    }
+
+    &__wordmark {
+        padding: 0rem;
+        margin: 0rem;
+        &--mobile {
+            @include mobile {
+                display: flex;
+                padding: 1rem 0rem 0rem;
+                margin: 0rem;
+            }
+
+            @include tablet {
+                display: none;      
+            }
+            @include desktop {
+                display: none;
+            }
+        }    
+        &--nonmobile {
+            order: 3;
+            @include mobile {
+                display: none;
+            }
+            @include tablet {
+                display: flex;
+                margin: 0rem 0rem 0rem 5rem;
+            }
+            @include desktop {
+                display: flex;
+                margin: 0rem 0rem 0rem 22rem;
+            }
+        }
+    }
+
+    &__logo {
+        width: 7.5rem;
+        height: 1.25rem;
+        padding: 0rem; 
+        &--mobile {
+            @include tablet {
+                display: none;      
+            }
+            @include desktop {
+                display: none;
+            }
+        }    
+        &--nonmobile {
+            @include mobile {
+                display: none;
+            }
+            @include tablet {
+                display: flex;
+            }
+            @include desktop {
+                display: flex;
+            }
+        }
+    }
+
+    &__copy {
+        @include footerCopy-mobile;
+        @include tablet {
+            @include footerCopy-notmobile;
+            padding: 2.5rem 0rem 0rem;
+        }
+        @include desktop {
+            @include footerCopy-notmobile;
+            padding: 2.5rem 0rem 0rem;
+        }
+    }
+
+}
