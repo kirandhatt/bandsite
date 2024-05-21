@@ -211,8 +211,8 @@ a, a:visited {
   .navigation {
     align-items: center;
     justify-content: flex-end;
-    margin: 0 auto;
-    height: 5rem;
+    margin: 0 63px;
+    height: 4rem;
   }
 }
 .navigation__heading {
@@ -226,7 +226,8 @@ a, a:visited {
 }
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .navigation__heading {
-    padding: 0rem 1rem;
+    display: flex;
+    align-items: flex-start;
   }
 }
 .navigation__logo {
@@ -256,7 +257,7 @@ a, a:visited {
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .navigation__pages {
     justify-content: left;
-    padding: 1.4rem 0rem 0rem 4rem;
+    padding: 0.4rem 0rem 0rem 4rem;
     margin: 0rem;
   }
 }
