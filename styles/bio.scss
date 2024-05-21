@@ -232,7 +232,7 @@
         font-weight: 600;
     }
     @include tablet {
-        padding: 0rem 0rem 2.25rem 0rem;
+        padding: 0rem 0rem 1rem 0rem;
         @include sectionHeader-notmobile;
         font-weight: 600;
     }
@@ -249,7 +249,7 @@
         @include tablet {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             flex-wrap: wrap;
         }
 
@@ -261,5 +261,9 @@
     &__image {
         width: 100%;
         padding-bottom: 1rem;
+        @include tablet {
+            width: 14rem;
+            padding: 0.5rem;
+        }
     }
 }
