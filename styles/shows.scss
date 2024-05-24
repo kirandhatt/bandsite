@@ -2,3 +2,90 @@
 @use "../styles/partials/typography" as *;
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/global" as *;
+
+// hero section //
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background: url(../assets/images/hero-shows.jpg) $overlay; 
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    width: 100%;
+    @include mobile {
+        height: 37vh;
+    }
+    @include tablet {
+        height: 47vh;
+    }
+    @include desktop {
+        flex-direction: row;
+        align-items: center;
+        height: 65vh;
+    }
+
+    &__subtitle {
+        @include subHeader-mobile;
+        font-weight: 400;
+        padding-bottom: 1rem;
+        @include tablet {
+            @include subHeader-notmobile;
+            font-weight: 400;
+        }
+        @include desktop {
+            @include subHeader-notmobile;
+            font-weight: 400;
+        }
+    }
+
+    &__title {
+        margin: 1rem 1rem 0rem;
+        color: $white;
+        @include tablet {
+            margin: 2.25rem;
+        }
+        @include desktop {
+            margin: 5rem;
+        }
+    }
+
+    &__text {
+        @include pageHeader-mobile;
+        font-weight: 600;
+        @include tablet {
+            @include pageHeader-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            @include pageHeader-notmobile;
+            font-weight: 600;
+        }
+    }
+
+    &__soundcloud {
+        &--mobile{
+        margin: 1rem 1rem;
+        @include tablet {
+            display: none;
+        }
+        @include desktop {
+            display: none;
+        }
+        }
+        &--nonmobile{
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+            margin: 1rem 2rem 0rem;
+        }
+        @include desktop {
+            margin: 9.5rem 5rem 5rem;
+        }
+        }
+    }
+}
