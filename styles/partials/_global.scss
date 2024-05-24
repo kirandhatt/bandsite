@@ -217,7 +217,7 @@ a, li {
         justify-content: space-between;
     }
     @include desktop {
-        padding: 2rem 4rem 1rem;
+        padding: 2rem 6rem 1rem;
         max-width: $max-width;
         margin: 0 auto;
     }
@@ -285,7 +285,7 @@ a, li {
         }
         @include desktop {
             position: absolute;
-            left: 22rem;
+            left: 24rem;
         }
     }
 

@@ -323,7 +323,7 @@ a, a:visited {
 }
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .footer {
-    padding: 2rem 4rem 1rem;
+    padding: 2rem 6rem 1rem;
     max-width: 1920px;
     margin: 0 auto;
   }
@@ -411,7 +411,7 @@ a, a:visited {
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .footer__menu {
     position: absolute;
-    left: 22rem;
+    left: 24rem;
   }
 }
 .footer__link {
