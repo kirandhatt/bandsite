@@ -89,3 +89,39 @@
         }
     }
 }
+
+// shows section //
+
+.shows {
+    display: flex;
+    width: 100%;
+    @include mobile {
+        padding: 1.5rem 1rem 0rem 1rem;
+    }
+    @include tablet {
+        padding: 3rem 2.25rem 0rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 2.25rem 0rem 2.25rem;
+        max-width: $max-width;
+    }
+
+    &__title {
+    @include mobile {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+    }
+    @include tablet {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }
+    @include desktop {
+        padding: 0rem 0rem 2.25rem 5rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+        margin: 0rem auto;
+    }    
+    }
+}

@@ -738,13 +738,13 @@ a, a:visited {
 }
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .about__title {
-    padding: 0rem 0rem 2.25rem 0rem;
+    padding: 0rem 0rem 2.25rem 5rem;
     font-family: "Avenir Next";
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;
     font-weight: 600;
-    margin: 0rem 5rem;
+    margin: 0rem auto;
   }
 }
 .about__image {
