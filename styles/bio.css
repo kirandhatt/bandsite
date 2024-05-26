@@ -1069,7 +1069,7 @@ a, a:visited {
   }
 }
 .comments__add-comment {
-  flex-direction: row;
+  display: flex;
   width: 100%;
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -1080,7 +1080,7 @@ a, a:visited {
 }
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .comments__add-comment {
-    width: 60%;
+    width: 50%;
     align-self: center;
   }
 }
@@ -1094,8 +1094,7 @@ a, a:visited {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
-  background-color: #E1E1E1;
-  margin: 2rem 0rem;
+  margin: 1.5rem 0rem;
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .comments__img {
@@ -1105,6 +1104,28 @@ a, a:visited {
 }
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .comments__img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.comments__img--no-picture {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  margin: 0rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .comments__img--no-picture {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .comments__img--no-picture {
     width: 3rem;
     height: 3rem;
   }
@@ -1182,12 +1203,49 @@ a, a:visited {
   font-size: 13px;
   line-height: 18px;
 }
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .comments__name::-moz-placeholder, .comments__text::-moz-placeholder {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .comments__name::placeholder, .comments__text::placeholder {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .comments__name::-moz-placeholder, .comments__text::-moz-placeholder {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .comments__name::placeholder, .comments__text::placeholder {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
 .comments__name:active, .comments__text:active {
   border: 0.0625rem solid #323232;
 }
 .comments__name:focus, .comments__text:focus {
   outline: #323232;
   border: 0.0625rem solid #323232;
+}
+.comments__text {
+  height: 6rem;
+}
+.comments__text::-moz-placeholder {
+  vertical-align: text-top;
+}
+.comments__text::placeholder {
+  vertical-align: text-top;
 }
 .comments__button {
   display: flex;
@@ -1223,7 +1281,7 @@ a, a:visited {
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .comments__submit {
     width: 10rem;
-    padding: 0.5rem, 2rem;
+    padding: 0.5rem, 1rem;
     font-family: "Avenir Next";
     font-weight: 700;
     font-size: 12px;
@@ -1234,7 +1292,7 @@ a, a:visited {
 @media screen and (min-width: 1280px) and (max-width: 1920px) {
   .comments__submit {
     width: 10rem;
-    padding: 0.5rem, 2rem;
+    padding: 0.25rem, 1rem;
     font-family: "Avenir Next";
     font-weight: 700;
     font-size: 12px;
@@ -1249,4 +1307,77 @@ a, a:visited {
 .comments__required {
   border-radius: 0.25rem;
   border: 0.0625rem solid #D22D2D;
+}
+
+.display-comments {
+  margin: 0rem;
+  line-height: 1.25rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .display-comments {
+    justify-content: center;
+    padding: 0rem 3rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .display-comments {
+    align-self: center;
+    width: 50%;
+    margin: 1rem;
+  }
+}
+.display-comments__list {
+  padding: 0rem;
+}
+.display-comments__card {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: space-between;
+  border-bottom: 0.0625rem solid #E1E1E1;
+  padding: 1rem 0rem;
+  width: 100%;
+}
+.display-comments__card:first-child {
+  border-top: 0.0625rem solid #E1E1E1;
+}
+.display-comments__content {
+  width: 100%;
+  padding: 0rem 0rem 0rem 1rem;
+}
+.display-comments__name-and-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 0rem 0.5rem 0rem;
+  font-family: "Avenir Next";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .display-comments__name-and-date {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .display-comments__name-and-date {
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.display-comments__name {
+  color: #323232;
+  font-weight: 600;
+}
+.display-comments__date {
+  color: #AFAFAF;
+}
+.display-comments__text {
+  text-align: left;
 }/*# sourceMappingURL=bio.css.map */

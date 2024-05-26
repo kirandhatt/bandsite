@@ -317,14 +317,14 @@
     }
 
     &__add-comment {
-        flex-direction: row;
+        display: flex;
         width: 100%;
         @include tablet {
             justify-content: center;
             padding: 0rem 3rem;
         }
         @include desktop {
-            width: 60%;
+            width: 50%;
             align-self: center;
         }
     }
@@ -338,8 +338,7 @@
         height: 2.25rem;
         object-fit: cover;
         border-radius: 50%;
-        background-color: $mercury;
-        margin: 2rem 0rem;
+        margin: 1.5rem 0rem;
         @include tablet {
             width: 3rem;
             height: 3rem;
@@ -347,6 +346,23 @@
         @include desktop {
             width: 3rem;
             height: 3rem;            
+        }
+        &--no-picture {
+            display: flex;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            background-color: $mercury;
+            margin: 0rem;
+            object-fit: cover;
+            @include tablet {
+                width: 3rem;
+                height: 3rem;
+            }
+            @include desktop {
+                width: 3rem;
+                height: 3rem;            
+            }
         }
     }
 
@@ -397,6 +413,12 @@
         &::placeholder {
             color: $bandSiteBlack;
             @include bodyCopy-mobile;
+            @include tablet {
+                @include bodyCopy-notmobile;
+            }
+            @include desktop {
+                @include bodyCopy-notmobile;
+            }
         }
         &:active {
             border: 0.0625rem solid$bandSiteBlack;
@@ -405,6 +427,13 @@
             outline: $bandSiteBlack;
             border: 0.0625rem solid$bandSiteBlack;
         }   
+    }
+
+    &__text {
+        height: 6rem;
+        &::placeholder {
+            vertical-align: text-top;
+        }
     }
 
     &__button {
@@ -433,13 +462,13 @@
         font-size: 1rem;
         @include tablet {
             width: 10rem;
-            padding: 0.5rem, 2rem;
+            padding: 0.5rem, 1rem;
             @include labelsButtons-notmobile;
             font-weight: 600;
         }
         @include desktop {
             width: 10rem;
-            padding: 0.5rem, 2rem;
+            padding: 0.25rem, 1rem;
             @include labelsButtons-notmobile;
             font-weight: 600;
         }
@@ -452,5 +481,68 @@
     &__required {
         border-radius: 0.25rem;
         border: 0.0625rem solid #D22D2D;
+    }
+}
+
+.display-comments {
+    margin: 0rem;
+    line-height: 1.25rem;
+    @include tablet {
+        justify-content: center;
+        padding: 0rem 3rem;
+    }
+    @include desktop {
+        align-self: center;
+        width: 50%;
+        margin: 1rem;
+    }
+    
+    &__list {
+        padding: 0rem;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        justify-content: space-between;
+        border-bottom: 0.0625rem solid $mercury;
+        padding: 1rem 0rem;
+        width: 100%;
+        &:first-child {
+            border-top: 0.0625rem solid $mercury;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        padding: 0rem 0rem 0rem 1rem;
+    }
+
+    &__name-and-date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 0rem 0.5rem 0rem;
+        @include bodyCopy-mobile;
+        @include tablet {
+            @include bodyCopy-notmobile;
+        }
+        @include desktop {
+            @include bodyCopy-notmobile;
+        }
+    }
+
+    &__name {
+        color: $bandSiteBlack;
+        font-weight: 600;
+    }
+
+    &__date {
+        color: $silver;
+    }
+
+    &__text {
+        text-align: left;
     }
 }
