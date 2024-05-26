@@ -278,3 +278,179 @@
         }
     }
 }
+
+// comment section //
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1.5rem 1rem 0rem 1rem;
+    width: 100%;
+    margin: 0rem center;
+    @include tablet {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 6rem 3rem 6rem;
+        max-width: $max-width;
+    }
+
+    &__title {
+    @include mobile {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-mobile;
+        font-weight: 600;
+    }
+    @include tablet {
+        padding: 0rem 0rem 1rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+    }
+    @include desktop {
+        padding: 0rem 0rem 2.25rem 0rem;
+        @include sectionHeader-notmobile;
+        font-weight: 600;
+        margin: 0rem;
+    }    
+    }
+
+    &__add-comment {
+        flex-direction: row;
+        width: 100%;
+        @include tablet {
+            justify-content: center;
+            padding: 0rem 3rem;
+        }
+        @include desktop {
+            width: 60%;
+            align-self: center;
+        }
+    }
+
+    &__img {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        object-fit: cover;
+        border-radius: 50%;
+        background-color: $mercury;
+        margin: 2rem 0rem;
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+        @include desktop {
+            width: 3rem;
+            height: 3rem;            
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__list {
+        margin: 0rem;
+        padding: 0rem 0rem 0rem 1rem;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        color: $silver;
+        @include labelsButtons-mobile;
+        font-weight: 600;
+        @include tablet {
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+        }
+    }
+
+    &__name, &__text {
+        width: 100%;
+        height: 2.25rem;
+        background-color: $alabaster;
+        margin: .25rem 0rem 1rem 0rem;
+        padding: .75rem;
+        border-radius: 0.25rem;
+        border: 0.0625rem solid $mercury;
+        @include tablet {
+            padding: 1rem;
+            height: 3rem;
+        }
+        @include desktop {
+            padding: 1rem;
+            height: 3rem;
+        }
+        &::placeholder {
+            color: $bandSiteBlack;
+            @include bodyCopy-mobile;
+        }
+        &:active {
+            border: 0.0625rem solid$bandSiteBlack;
+        }
+        &:focus {
+            outline: $bandSiteBlack;
+            border: 0.0625rem solid$bandSiteBlack;
+        }   
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include tablet {
+            justify-content: right;
+        }
+        @include desktop {
+            justify-content: right;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        height: 2.5rem;
+        padding: 0.5rem 0.25rem;
+        background-color: $bandSiteBlack;
+        color: $white;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+        border: none;
+        @include labelsButtons-mobile;
+        font-weight: 600;
+        font-size: 1rem;
+        @include tablet {
+            width: 10rem;
+            padding: 0.5rem, 2rem;
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            width: 10rem;
+            padding: 0.5rem, 2rem;
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+        }
+        &:hover {
+            background-color: $bandSiteDarkBlack;
+            cursor: pointer;
+        }
+    }
+
+    &__required {
+        border-radius: 0.25rem;
+        border: 0.0625rem solid #D22D2D;
+    }
+}

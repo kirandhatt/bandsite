@@ -74,6 +74,32 @@
                 <img class="gallery__image" src="./assets/images/Photo-gallery-9.jpg" alt="confetti falling over crowd">
             </div>
         </section>
+
+        <!-- comment section -->
+        <section class="comments">
+            <h2 class="comments__title">Join the Conversation</h2>
+            <div class="comments__add-comment"></div>
+                <div class="comments__img"></div>
+                <div class="comments__form">
+                    <form id="commentForm" action="#" method="post">
+                        <section>
+                            <ul class="comments__list">
+                                <li>
+                                    <label class="comments__label" for="name">Name</label>
+                                    <input class="comments__name" type="text" id="name" name="user_name" value="" placeholder="Enter your name" autocomplete="given-name">
+                                </li>
+                                <li>
+                                    <label class="comments__label" for="comment">Comment</label>
+                                    <input class="comments__text" type="text" id="comment" name="user_comment" value="" placeholder="Add a new comment" autocomplete="off">
+                                </li>
+                                <li class="comments__button">
+                                    <button id="add-comment" class="comments__submit" type="submit">Comment</button>
+                                </li>
+                            </ul>
+                        </section>
+                    </form>
+                </div>
+        </section>
     </main>
 
     <!-- footer -->
@@ -127,5 +153,6 @@
             </div>
         </section>
     </footer>
+    <script src="./scripts/index-page.js"></script>
 </body>
 </html>
