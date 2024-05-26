@@ -17,15 +17,15 @@
     padding: 1rem;
     width: 100%;
     @include mobile {
-        height: 37vh;
+        min-height: 37vh;
     }
     @include tablet {
-        height: 47vh;
+        min-height: 47vh;
     }
     @include desktop {
         flex-direction: row;
         align-items: center;
-        height: 65vh;
+        min-height: 65vh;
     }
 
     &__subtitle {
@@ -43,7 +43,7 @@
     }
 
     &__title {
-        margin: 1rem 1rem 0rem;
+        margin: 1rem 0rem 0rem;
         color: $white;
         @include tablet {
             margin: 2.25rem;
@@ -68,7 +68,7 @@
 
     &__soundcloud {
         &--mobile{
-        margin: 1rem 1rem;
+        margin: 1rem 0rem;
         @include tablet {
             display: none;
         }
@@ -93,35 +93,237 @@
 // shows section //
 
 .shows {
-    display: flex;
-    width: 100%;
-    @include mobile {
-        padding: 1.5rem 1rem 0rem 1rem;
-    }
+    padding: 0rem;
     @include tablet {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         padding: 3rem 2.25rem 0rem 2.25rem;
     }
     @include desktop {
+        flex-direction: row;
         padding: 3rem 2.25rem 0rem 2.25rem;
         max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    &__container {
+        &--desktop {
+            @include desktop {
+                display: flex;
+                align-items: flex-start;
+            }
+        }
     }
 
     &__title {
-    @include mobile {
-        padding: 0rem 0rem 1rem 0rem;
+        padding: 1rem;
         @include sectionHeader-mobile;
         font-weight: 600;
+        @include tablet {
+            display: none;
+        }
+        @include desktop {
+            display: none;
+        }
+        &--desktop {
+            display: none;
+            @include tablet {
+                display:flex;
+                padding: 0rem 0rem 2.25rem 0.5rem;
+                @include sectionHeader-notmobile;
+                    font-weight: 600;
+            }
+            @include desktop {
+                display:flex;
+                padding: 0rem 0rem 2.25rem 4rem;
+                @include sectionHeader-notmobile;
+                    font-weight: 600;
+            }
+        }    
     }
-    @include tablet {
-        padding: 0rem 0rem 2.25rem 0rem;
-        @include sectionHeader-notmobile;
+
+    &__list {
+        padding: 0rem;
+        margin: 0rem 0rem 1rem;
+        @include tablet {
+            padding: 0rem 0rem 1rem;
+        }
+        @include desktop {
+            padding: 0rem 0rem 1rem 4rem;
+            width: 70%;
+        }
+    }
+
+    &__cards {
+        border-bottom: 0.0625rem solid $mercury;
+        padding: 0rem 0rem 1rem 0rem;
+        margin: 0rem;
+        display: flex;
+        flex-direction: column;
+        &--selected {
+            background-color: $mercury;
+        }
+        &--sub-list {
+            padding: 1rem 0rem 0rem;
+        }
+        &--sub-list-button {
+            padding-inline-start: 1rem;
+            padding-inline-end: 1rem;
+        }
+        &:hover {
+            background-color: $alabaster;
+            cursor: pointer;
+        }
+        @include tablet {
+            padding: 1rem 1rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            &--sub-list {
+                display: flex;
+                align-items: center;
+                padding: 0rem;
+            }
+        }
+        @include desktop {
+            padding: 1rem 1rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            &--sub-list {
+                display: flex;
+                align-items: center;
+                padding: 0rem;
+            }
+        }
+    }
+
+    &__info {
+        &--date {
+            font-weight: 600;
+            font-size: 13px;
+            padding: 0rem 1rem;
+            @include tablet {
+                min-width: 9rem;
+                column-gap: 0.125rem;
+                padding: 0rem;
+            }
+            @include desktop {
+                min-width: 9rem;
+                column-gap: 0.125rem;
+                padding: 0rem;
+            }
+        }
+        &--venue, &--location {
+            font-weight: 400;
+            font-size: 13px;
+            padding: 0rem 1rem;
+            @include tablet {
+                min-width: 9rem;
+                column-gap: 0.125rem;
+                padding: 0rem;
+            }
+            @include desktop {
+                min-width: 9rem;
+                column-gap: 0.125rem;
+                padding: 0rem;
+            }
+        }
+    }
+
+    &__label {
+        padding: 0rem 1rem;
+        text-transform: uppercase;
+        color: $silver;
+        @include labelsButtons-mobile;
+        font-weight: 600;
+        @include tablet {
+            display: none;
+        }
+        @include desktop {
+            display: none;
+        }
+        &--nonmobile{
+            display: none;
+            color: $silver;
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 65%;
+                padding: 0rem 1rem 0.5rem;
+            }
+            @include desktop {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 65%;
+                padding: 1rem 0.25rem 0.25rem 1rem;
+            }
+        }
+    }
+
+    &__date {
         font-weight: 600;
     }
-    @include desktop {
-        padding: 0rem 0rem 2.25rem 5rem;
-        @include sectionHeader-notmobile;
+
+
+    &__venue {
+        padding-left: 0.8125rem;
+        @include tablet {
+            font-weight: 600;
+            padding-left: 0.75rem;
+        }
+        @include desktop {
+            font-weight: 600;
+            padding-left: 0.25rem;
+        }
+    }
+
+    &__location {
+        padding-right: 0rem;
+        @include tablet {
+            font-weight: 600;
+            padding-right: 1.25rem;
+        }
+        @include desktop {
+            font-weight: 600;
+            padding-right: 1.75rem;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        height: 2.5rem;
+        padding: 0.5rem 0.25rem;
+        background-color: $bandSiteBlack;
+        color: $white;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+        border: none;
+        @include labelsButtons-mobile;
         font-weight: 600;
-        margin: 0rem auto;
-    }    
+        font-size: 1rem;
+        @include tablet {
+            width: 10rem;
+            padding: 0.5rem, 1rem;
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            width: 10rem;
+            padding: 0.25rem, 1rem;
+            @include labelsButtons-notmobile;
+            font-weight: 600;
+        }
+        &:hover {
+            background-color: $bandSiteDarkBlack;
+            cursor: pointer;
+        }
     }
 }
