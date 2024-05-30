@@ -25,9 +25,7 @@ a, a:visited {
 }
 
 h1 {
-    @include mobile {
-        @include pageHeader-mobile;
-    }
+    @include pageHeader-mobile;
     @include tablet {
         @include pageHeader-notmobile;
     }
@@ -37,9 +35,7 @@ h1 {
 }
 
 h2 {
-    @include mobile {
-        @include sectionHeader-mobile;
-    }
+    @include sectionHeader-mobile;
     @include tablet {
         @include sectionHeader-notmobile;
     }
@@ -49,9 +45,7 @@ h2 {
 }
 
 h3 {
-    @include mobile {
-        @include subHeader-mobile;
-    }
+    @include subHeader-mobile;
     @include tablet {
         @include subHeader-notmobile;
     }
@@ -61,9 +55,7 @@ h3 {
 }
 
 p {
-    @include mobile {
-        @include bodyCopy-mobile;
-    }
+    @include bodyCopy-mobile;
     @include tablet {
         @include bodyCopy-notmobile;
     }
@@ -73,9 +65,7 @@ p {
 }
 
 a, li {
-    @include mobile {
-        @include labelsButtons-mobile;
-    }
+    @include labelsButtons-mobile;
     @include tablet {
         @include labelsButtons-notmobile;
     }
@@ -89,32 +79,29 @@ a, li {
 .nav-header {
     width: 100%;
     background-color: $bandSiteBlack;
-    @include mobile {
-        padding: 0.5rem 0rem;
-    }
+    padding: 0.5rem 0rem;
     @include tablet {
-        padding-left: 2.25rem;
-        padding-right: 2.25rem;
+        padding: 0.5rem 2.25rem 0rem;
     }
     @include desktop {
-        padding: 0 auto;
+        padding: 0.5rem 0rem 0rem;
     }
 }
 
 .navigation {
     background-color: $bandSiteBlack;
     display: flex;
-    @include mobile {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     @include tablet {
+        flex-direction: row;
         align-items: center;
         justify-content: flex-end;
         height: 4rem;
     }
     @include desktop {
+        flex-direction: row;
         align-items: center;
         justify-content: flex-end;
         margin: 0 3.9375rem;
@@ -167,9 +154,7 @@ a, li {
         text-align: center;
         padding: 0rem 0rem 0.5rem 0rem;
         transition: all ease-in-out 0.2s;
-        @include mobile {
-            width: 100%;
-        }
+        width: 100%;
         @include tablet {
             padding: 0rem 0rem 1rem 0rem;
             margin: 0rem 1rem;
@@ -380,12 +365,9 @@ a, li {
         padding: 0rem;
         margin: 0rem;
         &--mobile {
-            @include mobile {
-                display: flex;
-                padding: 1rem 0rem 0rem;
-                margin: 0rem;
-            }
-
+            display: flex;
+            padding: 1rem 0rem 0rem;
+            margin: 0rem;
             @include tablet {
                 display: none;      
             }
@@ -394,9 +376,7 @@ a, li {
             }
         }    
         &--nonmobile {
-            @include mobile {
-                display: none;
-            }
+            display: none;
             @include tablet {
                 display: flex;
                 margin: 0rem;
@@ -421,9 +401,7 @@ a, li {
             }
         }    
         &--nonmobile {
-            @include mobile {
-                display: none;
-            }
+            display: none;
             @include tablet {
                 display: flex;
             }

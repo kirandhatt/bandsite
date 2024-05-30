@@ -16,9 +16,7 @@
     background-position: center;
     padding: 1rem;
     width: 100%;
-    @include mobile {
-        min-height: 37vh;
-    }
+    min-height: 37vh;
     @include tablet {
         min-height: 47vh;
     }
@@ -68,24 +66,24 @@
 
     &__soundcloud {
         &--mobile{
-        margin: 1rem 0rem;
-        @include tablet {
-            display: none;
-        }
-        @include desktop {
-            display: none;
-        }
+            margin: 1rem 0rem;
+            @include tablet {
+                display: none;
+            }
+            @include desktop {
+                display: none;
+            }
         }
         &--nonmobile{
-        @include mobile {
             display: none;
-        }
-        @include tablet {
-            margin: 1rem 2rem 0rem;
-        }
-        @include desktop {
-            margin: 9.5rem 5rem 5rem;
-        }
+            @include tablet {
+                display: block;
+                margin: 1rem 2rem 0rem;
+            }
+            @include desktop {
+                display: block;
+                margin: 9.5rem 5rem 5rem;
+            }
         }
     }
 }
@@ -101,7 +99,7 @@
         padding: 3rem 2.25rem 0rem 2.25rem;
     }
     @include desktop {
-        flex-direction: row;
+        flex-direction: column;
         padding: 3rem 2.25rem 0rem 2.25rem;
         max-width: $max-width;
         margin: 0 auto;
@@ -120,6 +118,7 @@
         padding: 1rem;
         @include sectionHeader-mobile;
         font-weight: 600;
+        color: $bandSiteBlack;
         @include tablet {
             display: none;
         }

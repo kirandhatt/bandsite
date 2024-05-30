@@ -5,35 +5,47 @@ const showsList = document.getElementById("shows-list");
 // shows array //
 
 let shows = [
-    {date: "Mon Sept 09 2024",
+    {
+    date: "Mon Sept 09 2024",
     venue: "Ronald Lane",
     location: "San Francisco, CA",
-    button: "Buy Tickets"},
+    button: "Buy Tickets"
+    },
 
-    {date: "Tue Sept 17 2024",
+    {
+    date: "Tue Sept 17 2024",
     venue: "Pier 3 East",
     location: "San Francisco, CA",
-    button: "Buy Tickets"},
+    button: "Buy Tickets"
+    },
 
-    {date: "Sat Oct 12 2024",
+    {
+    date: "Sat Oct 12 2024",
     venue: "View Lounge",
     location: "San Francisco, CA",
-    button: "Buy Tickets"},
+    button: "Buy Tickets"
+    },
 
-    {date: "Sat Nov 16 2024",
+    {
+    date: "Sat Nov 16 2024",
     venue: "Hyatt Agency",
     location: "San Francisco, CA",
-    button: "Buy Tickets"},
+    button: "Buy Tickets"
+    },
 
-    {date: "Fri Nov 29 2024",
+    {
+    date: "Fri Nov 29 2024",
     venue: "Moscow Center",
     location: "San Francisco, CA",
-    button: "Buy Tickets"},
+    button: "Buy Tickets"
+    },
 
-    {date: "Wed Dec 18 2024",
+    {
+    date: "Wed Dec 18 2024",
     venue: "Press Club",
     location: "San Francisco, CA",
-    button: "Buy Tickets"}
+    button: "Buy Tickets"
+    }
 ]
 
 // display shows list //

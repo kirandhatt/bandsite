@@ -14,9 +14,7 @@
     background-position: center;
     padding: 1rem;
     width: 100%;
-    @include mobile {
-        height: 24vh;
-    }
+    height: 24vh;
     @include tablet {
         height: 47vh;
     }
@@ -56,10 +54,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-
-    @include mobile {
-        padding: 1.5rem 1rem 0rem 1rem;
-    }
+    padding: 1.5rem 1rem 0rem 1rem;
     @include tablet {
         padding: 3rem 2.25rem 0rem 2.25rem;
     }
@@ -69,22 +64,20 @@
     }
 
     &__title {
-    @include mobile {
-        padding: 0rem 0rem 1rem 0rem;
-        @include sectionHeader-mobile;
-        font-weight: 600;
-    }
+    padding: 0rem 0rem 1rem 0rem;
+    @include sectionHeader-mobile;
+    font-weight: 600;
     @include tablet {
         padding: 0rem 0rem 2.25rem 0rem;
         @include sectionHeader-notmobile;
         font-weight: 600;
-    }
+        }
     @include desktop {
         padding: 0rem 0rem 2.25rem 5rem;
         @include sectionHeader-notmobile;
         font-weight: 600;
         margin: 0rem auto;
-    }    
+        }    
     }
 
     &__image {
@@ -114,10 +107,8 @@
     }
 
     &__quotation {
-        @include mobile {
-            @include subHeader-mobile;
-            text-align: left;
-        }
+        @include subHeader-mobile;
+        text-align: left;
         @include tablet {
             @include subHeader-notmobile;
             text-align: left;
@@ -131,11 +122,9 @@
     }
 
     &__quotee {
-        @include mobile {
-            @include subHeader-mobile;
-            text-align: left;
-            padding: 1rem 0rem;
-        }
+        @include subHeader-mobile;
+        text-align: left;
+        padding: 1rem 0rem;
         @include tablet {
             @include subHeader-notmobile;
             text-align: left;
@@ -157,11 +146,9 @@
     }
 
     &__subtitle {
-        @include mobile {
-            @include subHeader-mobile;
-            text-align: left;
-            font-size: 1rem;
-        }
+        @include subHeader-mobile;
+        text-align: left;
+        font-size: 1rem;
         @include tablet {
             @include subHeader-notmobile;
             text-align: left;
@@ -191,11 +178,9 @@
     }
 
     &__paragraph {
-        @include mobile {
-            @include bodyCopy-mobile;
-            text-align: left;
-            padding: 1rem 0rem 0rem;
-        }
+        @include bodyCopy-mobile;
+        text-align: left;
+        padding: 1rem 0rem 0rem;
         @include tablet {
             @include bodyCopy-notmobile;
             text-align: left;
@@ -214,9 +199,7 @@
 
 .gallery {
     background-color: $alabaster;
-    @include mobile {
-        padding: 1.5rem 1rem 0rem 1rem;
-    }
+    padding: 1.5rem 1rem 0rem 1rem;
     @include tablet {
         padding: 3rem 2.25rem 2.25rem 2.25rem;
     }
@@ -226,22 +209,21 @@
     }
 
     &__title {
-    @include mobile {
         padding: 0rem 0rem 1rem 0rem;
         @include sectionHeader-mobile;
         font-weight: 600;
-    }
-    @include tablet {
-        padding: 0rem 0rem 1rem 0rem;
-        @include sectionHeader-notmobile;
-        font-weight: 600;
-    }
-    @include desktop {
-        padding: 0rem 0rem 2.25rem 0rem;
-        @include sectionHeader-notmobile;
-        font-weight: 600;
-        margin: 0rem;
-    }    
+        color: $bandSiteBlack;
+        @include tablet {
+            padding: 0rem 0rem 1rem 0rem;
+            @include sectionHeader-notmobile;
+            font-weight: 600;
+        }
+        @include desktop {
+            padding: 0rem 0rem 2.25rem 0rem;
+            @include sectionHeader-notmobile;
+            font-weight: 600;
+            margin: 0rem;
+        }    
     }
 
     &__collection {
@@ -298,11 +280,10 @@
     }
 
     &__title {
-    @include mobile {
-        padding: 0rem 0rem 1rem 0rem;
-        @include sectionHeader-mobile;
-        font-weight: 600;
-    }
+    padding: 0rem 0rem 1rem 0rem;
+    @include sectionHeader-mobile;
+    font-weight: 600;
+    color: $bandSiteBlack;
     @include tablet {
         padding: 0rem 0rem 1rem 0rem;
         @include sectionHeader-notmobile;
