@@ -93,8 +93,8 @@ a, li {
         padding: 0.5rem 0rem;
     }
     @include tablet {
-        padding-left: 36px;
-        padding-right: 36px;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
     }
     @include desktop {
         padding: 0 auto;

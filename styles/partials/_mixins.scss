@@ -26,43 +26,43 @@
 @mixin pageHeader-mobile {
     font-family: 'Avenir Next';
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 @mixin sectionHeader-mobile {
     font-family: 'Avenir Next';
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 @mixin subHeader-mobile {
     font-family: 'Avenir Next';
     font-weight: 600;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: .875rem;
+    line-height: 1.375rem;
 }
 
 @mixin bodyCopy-mobile {
     font-family: 'Avenir Next';
     font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: .8125rem;
+    line-height: 1.125rem;
 }
 
 @mixin footerCopy-mobile {
     font-family: 'Avenir Next';
     font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: .8125rem;
+    line-height: 1.125rem;
 }
 
 @mixin labelsButtons-mobile {
     font-family: 'Avenir Next';
     font-weight: 700;
-    font-size: 10px;
-    line-height: 20px;
+    font-size: .625rem;
+    line-height: 1.25rem;
 }
 
 //set desktop & tablet text styles//
@@ -70,41 +70,41 @@
 @mixin pageHeader-notmobile {
     font-family: 'Avenir Next';
     font-weight: 700;
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
 }
 
 @mixin sectionHeader-notmobile {
     font-family: 'Avenir Next';
     font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
 }
 
 @mixin subHeader-notmobile {
     font-family: 'Avenir Next';
     font-weight: 600;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 @mixin bodyCopy-notmobile {
     font-family: 'Avenir Next';
     font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: .875rem;
+    line-height: 1.375rem;
 }
 
 @mixin footerCopy-notmobile {
     font-family: 'Avenir Next';
     font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: .875rem;
+    line-height: 1.25rem;
 }
 
 @mixin labelsButtons-notmobile {
     font-family: 'Avenir Next';
     font-weight: 700;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: .75rem;
+    line-height: 1.25rem;
 }

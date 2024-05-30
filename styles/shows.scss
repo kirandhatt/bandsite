@@ -202,7 +202,7 @@
     &__info {
         &--date {
             font-weight: 600;
-            font-size: 13px;
+            font-size: .8125rem;
             padding: 0rem 1rem;
             @include tablet {
                 min-width: 9rem;
@@ -217,7 +217,7 @@
         }
         &--venue, &--location {
             font-weight: 400;
-            font-size: 13px;
+            font-size: .8125rem;
             padding: 0rem 1rem;
             @include tablet {
                 min-width: 9rem;

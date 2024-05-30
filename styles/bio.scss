@@ -140,14 +140,14 @@
             @include subHeader-notmobile;
             text-align: left;
             padding: 0rem 3rem 0rem;
-            font-size: 14px;
+            font-size: .875rem;
             margin: 1rem 0rem 0rem 0rem;
         }
         @include desktop {
             @include subHeader-notmobile;
             text-align: left;
             padding: 0rem 11rem 0rem;
-            font-size: 14px;
+            font-size: .875rem;
             margin: 1rem 0rem 0rem 0rem;
         }
     }
