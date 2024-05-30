@@ -106,9 +106,9 @@ shows.forEach((item) => {
         e.preventDefault();
         showsCardItem.classList.toggle("shows__cards--selected");
         if (showsCardItem.classList.contains("shows__cards--selected")) {
-            showsCardItem.classList.remove("shows__cards:hover");
+            showsCardItem.style.pointerEvents = 'none';
         } else {
-            showsCardItem.classList.add("shows__cards:hover");
+            showsCardItem.style.pointerEvents = '';
         }
     });
 });
