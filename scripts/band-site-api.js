@@ -8,8 +8,7 @@ export class BandSiteApi {
         try {
             const response = await axios.post(`${this.baseURL}/comments?api_key=${this.apiKey}`, comment, {
                 headers: {
-                    'Content-Type': `application/json`,
-                    'Authorization': `Bearer ${this.apiKey}`
+                    'Content-Type': `application/json`
                 }
             });
             return response.data;
@@ -20,11 +19,7 @@ export class BandSiteApi {
 
     async getComments() {
         try {
-            const response = await axios.get(`${this.baseURL}/comments?api_key=${this.apiKey}`, {
-                headers: {
-                    'Authorization': `Bearer ${this.apiKey}`
-                }
-            });
+            const response = await axios.get(`${this.baseURL}/comments?api_key=${this.apiKey}`);
             let comments = response.data;
 
             // sort comments from new to old //
@@ -38,11 +33,7 @@ export class BandSiteApi {
 
     async getShows() {
         try {
-            const response = await axios.get(`${this.baseURL}/showdates?api_key=${this.apiKey}`, {
-                headers: {
-                    'Authorization': `Bearer ${this.apiKey}`
-                }
-            });
+            const response = await axios.get(`${this.baseURL}/showdates?api_key=${this.apiKey}`);
             return response.data;
         } catch (error) {
             console.error('Error getting shows:', error.response ? error.response.data : error.message);
