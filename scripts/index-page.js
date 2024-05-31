@@ -43,7 +43,7 @@ function displayComment(comment) {
 
     const textP = document.createElement("p");
     textP.classList.add("display-comments__text");
-    textP.textContent = comment.commentText;
+    textP.textContent = comment.comment;
     textDiv.appendChild(textP);
 
     // append name + date div and text div to card div //
@@ -61,6 +61,14 @@ function displayComment(comment) {
     commentsList.appendChild(commentDiv);
 };
 
+// add new comment //
+function addComments() {
+    commentsList.textContent = "";
+    displayComment(comment);
+}
+
+addComments();
+
 // load comments from api //
 
 async function loadComments() {
@@ -70,39 +78,6 @@ async function loadComments() {
 }
 
 loadComments();
-
-// create comments //
-
-let commentsArray = [
-    {
-    name: "Victor Pinto",
-    timestamp: "11/02/2023",
-    commentText: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    },
-
-    {
-    name: "Christina Cabrera",
-    timestamp: "10/28/2023",
-    commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-
-    {
-    name: "Isaac Tadesse",
-    timestamp: "10/20/2023",
-    commentText: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-];
-
-// add comments //
-
-function addComments() {
-    commentsList.textContent = "";
-    for (let i=0; i<commentsArray.length; i++) {
-        displayComment(commentsArray[i]);
-    }
-};
-
-addComments();
 
 // today's date //
 
@@ -134,24 +109,13 @@ form.addEventListener('submit', async (e) => {
     } else {
         const newComment = {
             name: userName,
-            commentText: commentText,
-            timestamp: new Date().toISOString()
+            comment: commentText
         };
 
         await bandSiteApi.postComment(newComment);
         nameInput.value = "";
         commentInput.value = "";
         loadComments();
-
-        commentsArray.unshift({
-            name: userName,
-            timestamp: today,
-            commentText: comment,
-        })
-
-        nameInput.value = "";
-        commentInput.value = "";
-        addComments();
     }
 });
 
