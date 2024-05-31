@@ -1,93 +1,70 @@
+import {BandSiteApi} from './band-site-api.js';
+const bandSiteApi = new BandSiteApi(apiKey);
+
 // create shows list //
 
 const showsList = document.getElementById("shows-list");
 
-// shows array //
+// createElement function for ease //
+function createElement (tag, className, textContent) {
+    const element = document.createElement(tag);
+    if (className) element.classList.add(className);
+    if (textContent) element.textContent = textContent;
+    return element;
+};
 
-let shows = [
-    {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-
-    {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-
-    {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-
-    {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-
-    {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-
-    {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    }
-]
-
-// display shows list //
+// select rows one at a time //
 
 let currentlySelectedRow = null;
 
-shows.forEach((item) => {
-    const labelsShows = Object.keys(item);
+// display shows list //
 
-    // create lists //
-    const showsCardItem = document.createElement("li");
-    showsCardItem.classList.add("shows__cards");
+function displayShows(shows) {
+    showsList.textContent = "";
 
-    const showsDateList = document.createElement("ul");
-    showsDateList.classList.add("shows__cards--sub-list");
+    shows.forEach((item) => {
+        const labelsShows = {
+            date: "Date",
+            venue: "Venue",
+            location: "Location",
+            button: "Button"
+        };
 
-    const showsVenueList = document.createElement("ul");
-    showsVenueList.classList.add("shows__cards--sub-list");
+        // create lists //
+        const showsCardItem = document.createElement("li");
+        showsCardItem.classList.add("shows__cards");
 
-    const showsLocationList = document.createElement("ul");
-    showsLocationList.classList.add("shows__cards--sub-list");
+        const showsDateList = document.createElement("ul");
+        showsDateList.classList.add("shows__cards--sub-list");
 
-    const showsButtonList = document.createElement("ul");
-    showsButtonList.classList.add("shows__cards--sub-list","shows__cards--sub-list-button");
+        const showsVenueList = document.createElement("ul");
+        showsVenueList.classList.add("shows__cards--sub-list");
 
-    // create items and append them to lists //
-    function createElement (tag, className, textContent) {
-        const element = document.createElement(tag);
-        if (className) element.classList.add(className);
-        if (textContent) element.textContent = textContent;
-        return element;
-    };
+        const showsLocationList = document.createElement("ul");
+        showsLocationList.classList.add("shows__cards--sub-list");
 
-    showsDateList.appendChild(createElement("li", "shows__label", labelsShows[0]));
-    showsDateList.appendChild(createElement("li", "shows__info--date", item.date));
+        const showsButtonList = document.createElement("ul");
+        showsButtonList.classList.add("shows__cards--sub-list","shows__cards--sub-list-button");
 
-    showsVenueList.appendChild(createElement("li", "shows__label", labelsShows[1]));
-    showsVenueList.appendChild(createElement("li", "shows__info--venue", item.venue));
+        // create items and append to lists //
+        showsDateList.appendChild(createElement("li", "shows__label", labelsShows.date));
+        showsDateList.appendChild(createElement("li", "shows__info--date", new Date(item.date).toLocaleDateString()));
+    
+        showsVenueList.appendChild(createElement("li", "shows__label", labelsShows[1]));
+        showsVenueList.appendChild(createElement("li", "shows__info--venue", item.venue));
+    
+        showsLocationList.appendChild(createElement("li", "shows__label", labelsShows[2]));
+        showsLocationList.appendChild(createElement("li", "shows__info--location", item.location));
+    
+    })
+}
 
-    showsLocationList.appendChild(createElement("li", "shows__label", labelsShows[2]));
-    showsLocationList.appendChild(createElement("li", "shows__info--location", item.location));
 
+    
+
+    
+
+    
     const buttons = document.createElement("button");
     buttons.classList.add("shows__button");
     buttons.textContent = item.button;
