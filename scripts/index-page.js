@@ -1,3 +1,6 @@
+import {BandSiteApi} from './band-site-api.js';
+const bandSiteApi = new BandSiteApi(apiKey);
+
 // create comment section //
 
 const commentSection = document.querySelector(".comments");
@@ -35,7 +38,7 @@ function displayComment(comment) {
 
     const dateP = document.createElement("p");
     dateP.classList.add("display-comments__date");
-    dateP.textContent = comment.timestamp;
+    dateP.textContent = new Date(comment.timestamp).toLocaleDateString();
     nameAndDateDiv.appendChild(dateP);
 
     const textP = document.createElement("p");
@@ -57,6 +60,16 @@ function displayComment(comment) {
     // append comment div to comment list div //
     commentsList.appendChild(commentDiv);
 };
+
+// load comments from api //
+
+async function loadComments() {
+    const comments = await bandSiteApi.getComments();
+    commentsList.textContent = "";
+    comments.forEach(comment => displayComment(comment));
+}
+
+loadComments();
 
 // create comments //
 
@@ -106,10 +119,10 @@ const form = document.getElementById('commentForm');
 const nameInput = document.querySelector(".comments__name");
 const commentInput = document.querySelector(".comments__text");
 
-form.addEventListener('submit',(e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const userName = nameInput.value;
-    const comment = commentInput.value;
+    const commentText = commentInput.value;
 
     if(userName === "" && comment === "") {
         nameInput.classList.add("comments__required");
@@ -119,6 +132,17 @@ form.addEventListener('submit',(e) => {
     } else if (comment === "") {
         commentInput.classList.add("comments__required");
     } else {
+        const newComment = {
+            name: userName,
+            commentText: commentText,
+            timestamp: new Date().toISOString()
+        };
+
+        await bandSiteApi.postComment(newComment);
+        nameInput.value = "";
+        commentInput.value = "";
+        loadComments();
+
         commentsArray.unshift({
             name: userName,
             timestamp: today,
