@@ -812,8 +812,16 @@ a, li {
   display: flex;
   flex-direction: column;
 }
+.shows__cards:hover {
+  background-color: #FAFAFA;
+  cursor: pointer;
+}
 .shows__cards--selected {
   background-color: #E1E1E1;
+}
+.shows__cards--selected:hover {
+  background-color: #E1E1E1;
+  cursor: pointer;
 }
 .shows__cards--sub-list {
   padding: 1rem 0rem 0rem;
@@ -821,10 +829,6 @@ a, li {
 .shows__cards--sub-list-button {
   padding-inline-start: 1rem;
   padding-inline-end: 1rem;
-}
-.shows__cards:hover {
-  background-color: #FAFAFA;
-  cursor: pointer;
 }
 @media screen and (min-width: 48rem) {
   .shows__cards {

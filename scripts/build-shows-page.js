@@ -50,6 +50,8 @@ let shows = [
 
 // display shows list //
 
+let currentlySelectedRow = null;
+
 shows.forEach((item) => {
     const labelsShows = Object.keys(item);
 
@@ -104,11 +106,16 @@ shows.forEach((item) => {
     showsCardItem.addEventListener("click", (e) => {
         e.stopPropagation();
         e.preventDefault();
-        showsCardItem.classList.toggle("shows__cards--selected");
-        if (showsCardItem.classList.contains("shows__cards--selected")) {
-            showsCardItem.style.pointerEvents = 'none';
-        } else {
-            showsCardItem.style.pointerEvents = '';
+        
+        if(currentlySelectedRow && currentlySelectedRow !== showsCardItem) {
+            currentlySelectedRow.classList.remove('shows__cards--selected');
         }
-    });
+        showsCardItem.classList.toggle("shows__cards--selected");
+
+        if(showsCardItem.classList.contains('shows__cards--selected')) {
+            currentlySelectedRow = showsCardItem;
+        } else {
+            currentlySelectedRow = null;
+        }
+    });  
 });
