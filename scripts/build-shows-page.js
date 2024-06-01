@@ -25,7 +25,7 @@ function displayShows(shows) {
     shows.forEach((item) => {
         const labelsShows = {
             date: "Date",
-            venue: "Venue",
+            place: "Venue",
             location: "Location",
             button: "Button"
         };
@@ -50,49 +50,53 @@ function displayShows(shows) {
         showsDateList.appendChild(createElement("li", "shows__label", labelsShows.date));
         showsDateList.appendChild(createElement("li", "shows__info--date", new Date(item.date).toLocaleDateString()));
     
-        showsVenueList.appendChild(createElement("li", "shows__label", labelsShows[1]));
-        showsVenueList.appendChild(createElement("li", "shows__info--venue", item.venue));
+        showsVenueList.appendChild(createElement("li", "shows__label", labelsShows.place));
+        showsVenueList.appendChild(createElement("li", "shows__info--venue", item.place));
     
-        showsLocationList.appendChild(createElement("li", "shows__label", labelsShows[2]));
+        showsLocationList.appendChild(createElement("li", "shows__label", labelsShows.location));
         showsLocationList.appendChild(createElement("li", "shows__info--location", item.location));
-    
-    })
+
+        const buttons = document.createElement("button");
+        buttons.classList.add("shows__button");
+        buttons.textContent = "Buy Tickets";
+        showsButtonList.appendChild(buttons);
+
+        // append list divs to card items //
+        showsCardItem.appendChild(showsDateList);
+        showsCardItem.appendChild(showsVenueList);
+        showsCardItem.appendChild(showsLocationList);
+        showsCardItem.appendChild(showsButtonList);
+
+        // append card items to main shows list //
+        showsList.appendChild(showsCardItem);
+
+        // highlight selected row //
+        showsCardItem.addEventListener("click", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            if(currentlySelectedRow && currentlySelectedRow !== showsCardItem) {
+                currentlySelectedRow.classList.remove('shows__cards--selected');
+            }
+            showsCardItem.classList.toggle("shows__cards--selected");
+
+            if(showsCardItem.classList.contains('shows__cards--selected')) {
+                currentlySelectedRow = showsCardItem;
+            } else {
+                currentlySelectedRow = null;
+            }
+        });  
+    });
 }
 
+// load shows from api //
+async function loadShows() {
+    try {
+        const shows = await bandSiteApi.getShows();
+        displayShows(shows);
+    } catch (error) {
+        console.error('Error loading shows:', error);
+    }
+}
 
-    
-
-    
-
-    
-    const buttons = document.createElement("button");
-    buttons.classList.add("shows__button");
-    buttons.textContent = item.button;
-    showsButtonList.appendChild(buttons);
-
-    // append list divs to card items //
-    showsCardItem.appendChild(showsDateList);
-    showsCardItem.appendChild(showsVenueList);
-    showsCardItem.appendChild(showsLocationList);
-    showsCardItem.appendChild(showsButtonList);
-
-    // append card items to main shows list //
-    showsList.appendChild(showsCardItem);
-
-    // highlight selected row //
-    showsCardItem.addEventListener("click", (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        
-        if(currentlySelectedRow && currentlySelectedRow !== showsCardItem) {
-            currentlySelectedRow.classList.remove('shows__cards--selected');
-        }
-        showsCardItem.classList.toggle("shows__cards--selected");
-
-        if(showsCardItem.classList.contains('shows__cards--selected')) {
-            currentlySelectedRow = showsCardItem;
-        } else {
-            currentlySelectedRow = null;
-        }
-    });  
-});
+loadShows();
