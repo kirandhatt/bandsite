@@ -22,6 +22,13 @@ let currentlySelectedRow = null;
 function displayShows(shows) {
     showsList.textContent = "";
 
+    const tableHeadings = createElement("li", "shows__tableHeadings");
+    tableHeadings.appendChild(createElement("div", "shows__tableHeadings-item", "Date"));
+    tableHeadings.appendChild(createElement("div", "shows__tableHeadings-item", "Venue"));
+    tableHeadings.appendChild(createElement("div", "shows__tableHeadings-item", "Location"));
+    tableHeadings.appendChild(createElement("div", "shows__tableHeadings-item", ""));
+    showsList.appendChild(tableHeadings);
+
     shows.forEach((item) => {
         const labelsShows = {
             date: "Date",

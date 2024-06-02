@@ -605,7 +605,6 @@ a, li {
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: left;
   background: url(../assets/images/hero-shows.jpg) rgba(50, 50, 50, 0.5);
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -624,6 +623,7 @@ a, li {
   .hero {
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     min-height: 65vh;
   }
 }
@@ -710,13 +710,13 @@ a, li {
 }
 @media screen and (min-width: 48rem) {
   .hero__soundcloud--nonmobile {
-    display: block;
-    margin: 1rem 2rem 0rem;
+    display: flex;
+    margin: 1rem 2rem 1rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .hero__soundcloud--nonmobile {
-    display: block;
+    display: flex;
     margin: 9.5rem 5rem 5rem;
   }
 }
@@ -945,6 +945,46 @@ a, li {
     justify-content: space-between;
     width: 65%;
     padding: 1rem 0.25rem 0.25rem 1rem;
+  }
+}
+.shows__tableHeadings {
+  display: none;
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 48rem) {
+  .shows__tableHeadings {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__tableHeadings {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 0rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .shows__tableHeadings-item {
+    min-width: 10rem;
+    -moz-column-gap: 0.125rem;
+         column-gap: 0.125rem;
+    padding: 0rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__tableHeadings-item {
+    min-width: 10rem;
+    -moz-column-gap: 0.125rem;
+         column-gap: 0.125rem;
+    padding: 0rem;
   }
 }
 .shows__date {

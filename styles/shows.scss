@@ -8,7 +8,6 @@
 .hero {
     display: flex;
     flex-direction: column;
-    align-items: left;
     background: url(../assets/images/hero-shows.jpg) $overlay; 
     background-blend-mode: multiply;
     background-repeat: no-repeat;
@@ -23,6 +22,7 @@
     @include desktop {
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         min-height: 65vh;
     }
 
@@ -77,11 +77,11 @@
         &--nonmobile{
             display: none;
             @include tablet {
-                display: block;
-                margin: 1rem 2rem 0rem;
+                display: flex;
+                margin: 1rem 2rem 1rem;
             }
             @include desktop {
-                display: block;
+                display: flex;
                 margin: 9.5rem 5rem 5rem;
             }
         }
@@ -269,6 +269,37 @@
                 width: 65%;
                 padding: 1rem 0.25rem 0.25rem 1rem;
             }
+        }
+    }
+
+    &__tableHeadings {
+        display: none;
+        text-transform: uppercase;
+        color: $silver;
+        @include labelsButtons-notmobile;
+        font-weight: 600;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding: 0rem 1rem;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem 0rem;
+        }
+    }
+
+    &__tableHeadings-item {
+        @include tablet {
+            min-width: 10rem;
+            column-gap: 0.125rem;
+            padding: 0rem;
+        }
+        @include desktop {
+            min-width: 10rem;
+            column-gap: 0.125rem;
+            padding: 0rem;
         }
     }
 
